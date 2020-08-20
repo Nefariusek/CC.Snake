@@ -1,7 +1,8 @@
 import AbstractFood from './abstractFood';
+import superFoodImgSrc from '../../src/foods/img/goldenApple.png';
 
 const superFoodImg = new Image();
-superFoodImg.src = '/src/foods/img/goldenApple.png';
+superFoodImg.src = superFoodImgSrc;
 
 //Super jedzenie - zwiększa maksymalną liczbę jedzenia na planszy
 

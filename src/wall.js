@@ -1,4 +1,4 @@
-import { ctx, cw, ch, walls } from './main';
+import { ctx, cw, ch } from './main';
 
 class Wall {
 
@@ -10,9 +10,7 @@ class Wall {
     this.radius = this.height/2;
     this.time = null;
     this.upperRow = ch/3;
-    this.upperRowCircle = this.upperRow+this.radius;
     this.bottomRow = 2*ch/3;
-    this.bottomRowCircle = this.bottomRow+this.radius;
     this.wallsRect = [];
     this.type = 'rect';
   }
@@ -33,22 +31,56 @@ class Wall {
     return this.wallsRect;
   }
 
+  addWallsRect_level2() {
+    this.upperRow = ch/5;
+    this.wallsRect.push(new Wall(1.5*cw/12+(3*this.radius), this.upperRow));
+    this.wallsRect.push(new Wall(7*cw/12, this.upperRow));
+    this.wallsRect.push(new Wall((7*cw/12)+this.length+6*this.radius, this.upperRow));
+    this.wallsRect.push(new Wall(1.5*cw/12, this.upperRow+(ch/5)));
+    this.wallsRect.push(new Wall(1.5*cw/12+this.length+(3*this.radius), this.upperRow+(ch/5)));
+    this.wallsRect.push(new Wall(7*cw/12+(7*this.radius), this.upperRow+ch/5));
+    this.wallsRect.push(new Wall(cw/12-this.radius, this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(cw/12+this.length+(2*this.radius), this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(5.5*cw/12, this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(5.5*cw/12+this.length+(2*this.radius), this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(5.5*cw/12+2*this.length+(8*this.radius), this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(6*cw/12+(3*this.radius), this.upperRow+(3*ch/5)));
+    this.wallsRect.push(new Wall(6*cw/12+(11*this.radius), this.upperRow+(3*ch/5)));
+
+    return this.wallsRect;
+  }
+
+  addWallsRect_level3() {
+    this.upperRow = ch/5;
+    this.wallsRect.push(new Wall(cw/12, this.upperRow));
+    this.wallsRect.push(new Wall((cw/12)+11*this.radius, this.upperRow));
+    this.wallsRect.push(new Wall(7.5*cw/12, this.upperRow));
+    this.wallsRect.push(new Wall((1.5*cw/12)+3*this.radius, this.upperRow+ch/5));
+    this.wallsRect.push(new Wall(0.5*cw/12, this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall((0.5*cw/12)+11*this.radius, this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(8*cw/12, this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(8*cw/12+this.length+(3*this.radius), this.upperRow+(2*ch/5)));
+    this.wallsRect.push(new Wall(3.5*cw/12+(3*this.radius), this.upperRow+(3*ch/5)));
+    this.wallsRect.push(new Wall(3.5*cw/12+(11*this.radius), this.upperRow+(3*ch/5)));
+
+    return this.wallsRect;
+  }
+
+
+
   // rysowanie ścian
-  drawWalls(arr1){
+  drawWalls(){
   let i=0;
   
-  for (i; i<arr1.length; i++){
-    if (arr1[i].type === 'rect'){
+  for (i; i<this.wallsRect.length; i++){
+    if (this.wallsRect[i].type === 'rect'){
         ctx.beginPath();
-        arr1[i].drawRect();
+        this.wallsRect[i].drawRect();
         ctx.closePath();
     } 
-    else {
-        ctx.beginPath();
-        arr1[i].drawRect();
-        ctx.closePath();
-    }
   }
+
+  i=0;
   }
 
   // rysowanie tekstu

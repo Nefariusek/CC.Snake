@@ -1,7 +1,8 @@
 import AbstractFood from './abstractFood';
+import splitFoodImgSrc from '../../src/foods/img/pinkApple.png';
 
 const splitFoodImg = new Image();
-splitFoodImg.src = '/src/foods/img/pinkApple.png';
+splitFoodImg.src = splitFoodImgSrc;
 
 // Dzielące jedzenie - skraca węża o połowę (razem z punktami);
 

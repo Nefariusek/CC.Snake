@@ -1,7 +1,8 @@
 import AbstractFood from './abstractFood';
+import weakeningFoodImgSrc from '../../src/foods/img/rottenApple.png';
 
 const weakeningFoodImg = new Image();
-weakeningFoodImg.src = '/src/foods/img/rottenApple.png';
+weakeningFoodImg.src = weakeningFoodImgSrc;
 
 //Osłabiające jedzenie - po zjedzeniu przez 10 sekund ruch jest nieregularny
 

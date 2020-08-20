@@ -1,7 +1,8 @@
 import AbstractFood from './abstractFood';
+import normalFoodImgSrc from '../../src/foods/img/redApple.png';
 
 const normalFoodImg = new Image();
-normalFoodImg.src = '/src/foods/img/redApple.png';
+normalFoodImg.src = normalFoodImgSrc;
 
 // Normalne jedzenie - dodaje 1 do długości węża
 

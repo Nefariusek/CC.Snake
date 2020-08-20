@@ -1,7 +1,8 @@
 import AbstractFood from './abstractFood';
+import comboFoodImgSrc from '../../src/foods/img/greenApple.png';
 
 const comboFoodImg = new Image();
-comboFoodImg.src = '/src/foods/img/greenApple.png';
+comboFoodImg.src = comboFoodImgSrc;
 
 //Combo jedzenie - po zjedzeniu 3 z rzędu mnożnik punktów rośnie 2x na 10 sekund
 

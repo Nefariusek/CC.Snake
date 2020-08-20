@@ -17,9 +17,9 @@
         <div class="scoreboard">
           <div class="logo"></div>
           <div class="game-data">
-            <p id="player-name">Player: <span id="name"></span></p>
-            <p id="score"></p>
-            <p id="multiplier"></p>
+            <p id="player-name">Player: <span id="name">-</span></p>
+            <p id="score">Score: <span id="score-span">0</span></p>
+            <p id="multiplier">Multiplier: <span id="multiplier-span">x</span></p>
           </div>
           <div class="food-description">
             <h1>FOOD</h1>
@@ -46,6 +46,20 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class ="modalSettings">
+    <div class = "modal-content" >
+      <span class="close-button-settings">X</span>
+      <h1>Settings:</h1>
+      <h2>Enter your name<input type="text" id="playerName" maxlength ="5" size="5"></h2> 
+    </div>
+  </div>
+  <div class = "modalCredits">
+    <div class = "modal-content">
+      <span class="close-button-credits">X</span>
+      <h1>Creditsss</h1>
+      <h2>TEAM SNAKE</h2>
     </div>
   </div>
   <script defer src="index.js"></script>
